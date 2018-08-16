@@ -19,22 +19,8 @@ fake = Faker()
 # 	"Pisces" : "February 19 - March 20"
 # }
 
-def test_date_input_format_1():
-	date_format_1 = "January 12"
-	assert( horoscope(date_format_1) == "Capricorn")
 
-def test_date_input_format_2():
-	date_format_2 = "January 12, 1963"
-	assert( horoscope(date_format_2) == "Capricorn")
-
-def test_date_input_format_3():
-	date_format_3 = "01/12"
-	assert( horoscope(date_format_3) == "Capricorn")
-
-def test_date_input_format_4():
-	date_format_4 = "01/12/2004"
-	assert( horoscope(date_format_4) == "Capricorn")
-
+#  Test each sign within its date range
 def test_capricorn():
 	start = datetime.strptime("22 12 2000", "%d %m %Y")
 	end = datetime.strptime("19 01 2001", "%d %m %Y")
@@ -107,3 +93,48 @@ def test_sagittarius():
 	interum_date = fake.date_between(start, end)
 	assert( horoscope(interum_date) == "Sagittarius")
 
+#  Test acceptable date input formats
+def test_date_input_format_1():
+	date_format = "January 12"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_2():
+	date_format = "January 12, 1963"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_3():
+	date_format = "01/12"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_4():
+	date_format = "01/12/1963"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_5():
+	date_format = "12 January"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_6():
+	date_format = "Jan 12"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_7():
+	date_format = "january 12"
+	assert( horoscope(date_format) == "Capricorn")
+
+def test_date_input_format_8():
+	date_format = "12 January 63"
+	assert( horoscope(date_format) == "Capricorn")
+
+# Test for graceful failure
+def test_friendly_input_error_response():
+	not_a_date = "nonsense"
+	assert( horoscope(not_a_date) == "Please enter a date to learn its horoscope.")
+
+def test_friendly_input_error_response2():
+	not_a_date = "February 30"
+	assert( horoscope(not_a_date) == "Please enter a date to learn its horoscope.")
+
+def test_empty_input():
+	empty_string = ""
+	assert( horoscope(empty_string) == "Please enter a date to learn its horoscope.")
