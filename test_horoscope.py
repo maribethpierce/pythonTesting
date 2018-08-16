@@ -19,9 +19,25 @@ fake = Faker()
 # 	"Pisces" : "February 19 - March 20"
 # }
 
+def test_date_input_format_1():
+	date_format_1 = "January 12"
+	assert( horoscope(date_format_1) == "Capricorn")
+
+def test_date_input_format_2():
+	date_format_2 = "January 12, 1963"
+	assert( horoscope(date_format_2) == "Capricorn")
+
+def test_date_input_format_3():
+	date_format_3 = "01/12"
+	assert( horoscope(date_format_3) == "Capricorn")
+
+def test_date_input_format_4():
+	date_format_4 = "01/12/2004"
+	assert( horoscope(date_format_4) == "Capricorn")
+
 def test_capricorn():
-	start = datetime.strptime("22 12", "%d %m")
-	end = datetime.strptime("19 01", "%d %m")
+	start = datetime.strptime("22 12 2000", "%d %m %Y")
+	end = datetime.strptime("19 01 2001", "%d %m %Y")
 	interum_date = fake.date_between(start, end)
 	assert( horoscope(interum_date) == "Capricorn")
 

@@ -10,7 +10,4 @@ Homework:
 	I'm working under the assumption that the end goal of this function is
 	"Return horoscope for given date"
 
-	Under that assumption, I've written the tests such that they will guide the refactoring 
-	of the function so that it fulfills that requirement.
-
 3. Send me an email answering: how do you handle learning new skills and give me a good example of how you overcame a situation where you had to learn something new?
