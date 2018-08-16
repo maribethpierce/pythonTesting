@@ -19,7 +19,6 @@ fake = Faker()
 # 	"Pisces" : "February 19 - March 20"
 # }
 
-
 #  Test each sign within its date range
 def test_capricorn():
 	start = datetime.strptime("22 12 2000", "%d %m %Y")
