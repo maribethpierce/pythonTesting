@@ -7,7 +7,9 @@ Homework:
 
 2. Send me some automated tests using pytest to exercise the horoscope method
 
-	I'm working under the assumption that the end goal of this function is
-	"Return horoscope for given date"
+	~~I'm working under the assumption that the end goal of this function is
+	"Return horoscope for given date"~~
+
+	EDIT: Test rewritten to pass given the method as written
 
 3. Send me an email answering: how do you handle learning new skills and give me a good example of how you overcame a situation where you had to learn something new?
