@@ -21,76 +21,43 @@ fake = Faker()
 
 #  Test each sign within its date range
 def test_capricorn():
-	start = datetime.strptime("22 12 2000", "%d %m %Y")
-	end = datetime.strptime("19 01 2001", "%d %m %Y")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Capricorn")
+	assert( horoscope(1) == "Capricorn")
 
 def test_aquarius():
-	start = datetime.strptime("20 01", "%d %m")
-	end = datetime.strptime("18 02", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Aquarius")
+	assert( horoscope(2) == "Aquarius")
 
 def test_pisces():
-	start = datetime.strptime("19 02", "%d %m")
-	end = datetime.strptime("20 03", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Pisces")
+	assert( horoscope(3) == "Pisces")
 
 def test_aries():
-	start = datetime.strptime("21 03", "%d %m")
-	end = datetime.strptime("19 04", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Aries")
+	assert( horoscope(4) == "Aries")
 
 def test_taurus():
-	start = datetime.strptime("20 04", "%d %m")
-	end = datetime.strptime("20 05", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Taurus")
+	assert( horoscope(5) == "Taurus")
 
 def test_gemini():
-	start = datetime.strptime("21 05", "%d %m")
-	end = datetime.strptime("20 06", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Gemini")
+	assert( horoscope(6) == "Gemini")
 
 def test_cancer():
-	start = datetime.strptime("21 06", "%d %m")
-	end = datetime.strptime("22 07", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Cancer")
+	assert( horoscope(7) == "Cancer")
 
 def test_leo():
-	start = datetime.strptime("23 07", "%d %m")
-	end = datetime.strptime("22 08", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Leo")
+	assert( horoscope(8) == "Leo")
 
 def test_virgo():
-	start = datetime.strptime("23 08", "%d %m")
-	end = datetime.strptime("22 09", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Virgo")
+	assert( horoscope(9) == "Virgo")
 
 def test_libra():
-	start = datetime.strptime("23 09", "%d %m")
-	end = datetime.strptime("22 10", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Libra")
+	assert( horoscope(10) == "Libra")
 
 def test_scorpio():
-	start = datetime.strptime("23 10", "%d %m")
-	end = datetime.strptime("21 11", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Scorpio")
+	assert( horoscope(11) == "Scorpio")
 
 def test_sagittarius():
-	start = datetime.strptime("22 11", "%d %m")
-	end = datetime.strptime("21 12", "%d %m")
-	interum_date = fake.date_between(start, end)
-	assert( horoscope(interum_date) == "Sagittarius")
+	assert( horoscope(12) == "Sagittarius")
+
+def test_non_month():
+	assert( horoscope(13) == None)
 
 #  Test acceptable date input formats
 def test_date_input_format_1():
