@@ -1,9 +1,6 @@
 from horoscope import horoscope
-from random import randint
-from datetime import datetime
-from faker import Faker
-fake = Faker()
 import array
+
 signs = [
 	"Capricorn",
 	"Aquarius",
@@ -18,8 +15,6 @@ signs = [
 	"Scorpio",
 	"Sagittarius"
 ]
-
-
 
 #  Test each sign within its date range
 def test_horoscope():
